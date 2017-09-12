@@ -26,5 +26,6 @@ notifications:
   email:
     recipients:
       - joshua.davis@microsoft.com
+      - jiroseng@microsoft.com
     on_success: change
     on_failure: change

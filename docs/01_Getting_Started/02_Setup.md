@@ -28,7 +28,7 @@ Using the Azure Portal, provision a new instance of SQL Data Warehouse.
 <img src="../images/adw_name.jpg" class="block"/>
 
 3. Set the **Performance** to **100 DWU**. (You will not need any more for this workshop.)
-<img src="../images/100dwu.jpg" class="block"/>
+<img src="../images/adw100dwu.jpg" class="block"/>
 
 4. Select Server.
 <img src="../images/adw_select_server.jpg" class="block"/>

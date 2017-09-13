@@ -64,7 +64,7 @@
   13. In the dialog click on Power BI Service so that it appears in the list on the right and then click the checkmark.
   <img src="../images/power_bi_service_click.jpg" class="block"/>
 
-!!<h4>Power BI</h4>If Power BI Service does not show up on the list of applications, visit [https://powerbi.microsoft.com/en-us/documentation/powerbi-admin-free-with-custom-azure-directory/](https://powerbi.microsoft.com/en-us/documentation/powerbi-admin-free-with-custom-azure-directory/) to learn how to correct this. You will need to log in to Power BI as an organizational user within your directory before the service shows up in AAD.
+!!<h4>Power BI</h4>If Power BI Service does not show up on the list of applications, visit [powerbi.microsoft.com](https://powerbi.microsoft.com/en-us/documentation/powerbi-admin-free-with-custom-azure-directory/) to learn how to correct this. You will need to log in to Power BI as an organizational user within your directory before the service shows up in AAD.
 
   14. In the Power BI Service row that appears, click on **Delegated permissions** and check **View all Dashboards**.
   <img src="../images/view_all_dashboards.jpg" class="block"/>

@@ -1,5 +1,6 @@
 ## Azure Subscription
 As stated in the requirements section, the workshop requires an active Azure subscription.
+
 !!<h4>Recommendation</h4>It is recommended that you do not use an Azure subscription that is currently being used for production.  The CLI will create it's own resource groups, but it is not the best practice to utilize production environments for testing and workshops, such as this.
 
 For best results, it is recommended that you setup register for the trial subscription as outlined on the [previous](./01_Azure_Registration.md) page.
@@ -26,15 +27,17 @@ Using the Azure Portal, provision a new instance of SQL Data Warehouse.
 2. Provide a Name for the SQL Data Warehouse.
 <img src="../images/adw_name.jpg" class="block"/>
 
-3. Set the **Performance** to **100 DWU**. (You will not need any more for this orkshop.)
+3. Set the **Performance** to **100 DWU**. (You will not need any more for this workshop.)
 <img src="../images/100dwu.jpg" class="block"/>
 
 4. Select Server.
 <img src="../images/adw_select_server.jpg" class="block"/>
 
 5. Create a new server or use an existing server as desired.
+
 6. Select **Create**.
 <img src="../images/create_adw.jpg" class="block"/>
+
 <img src="../images/create_adw2.jpg" class="block"/>
 
 ### **Task 3:** Provision a Storage Account

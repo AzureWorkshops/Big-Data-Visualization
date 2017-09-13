@@ -110,5 +110,5 @@
 
   5. Return to the settings pane of the sample web app, and paste this connection string into the value field of the ML_StorageAccount setting.
   <img src="../images/ml_storage_account.jpg" class="block"/>
-  
+
   6. Save the project.

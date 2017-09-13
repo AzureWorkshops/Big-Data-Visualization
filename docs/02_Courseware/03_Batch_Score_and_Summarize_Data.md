@@ -6,7 +6,7 @@
 
 ### **Task 1:** Batch score flight data
 
-1.	AdventureWorks has provided a sample CSV file to batch score using your Azure ML model. You can download it from http://bit.ly/1XGg6M5. 
+1.	AdventureWorks has provided a sample CSV file to batch score using your Azure ML model. You can download it from [http://bit.ly/1XGg6M5](http://bit.ly/1XGg6M5). 
 
 2.	Open Visual Studio.
 
@@ -44,7 +44,7 @@
 14.	Wait for the upload to complete.
 <img src="../images/wait_for_upload.jpg" class="block"/>
 
-15.	Open a browser and navigate to Azure Machine Learning Web Services and click **Web Services**. You can always get there by going to https://services.azureml.net/.
+15.	Open a browser and navigate to Azure Machine Learning Web Services and click **Web Services**. You can always get there by going to [https://services.azureml.net/](https://services.azureml.net/).
 
 16.	Click on your web service.
 
@@ -78,7 +78,7 @@ ML_RegionPrefix: The name of the region in which your ML service is deployed.
 
 25. Navigate to your deployed sample in the browser, but instead of going to the homepage go to BatchScore, for example:
 
-    * http://\<yourwebapp\>.azurewebsites.net/BatchScore
+    * [http://\<yourwebapp\>.azurewebsites.net/BatchScore](http://\<yourwebapp\>.azurewebsites.net/BatchScore)
 
 26. Modify the values of the relative paths for the location of the file to score and the location of scored output to that it is correct for your environment, for example:
 

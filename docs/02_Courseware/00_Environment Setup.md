@@ -6,7 +6,7 @@
 
 ### **Task 1:** Download and unzip the sample
 
-  1. Download the sample project from the following link: http://bit.ly/238cJDY.
+  1. Download the sample project from the following link: [http://bit.ly/238cJDY](http://bit.ly/238cJDY).
 
   2. Extract the ZIP file.
 
@@ -29,7 +29,7 @@
 
 ### **Task 2:** Register Web App with Azure Active Directory 
 
-  1. Login in to the existing portal https://manage.windowsazure.com/ using the same credentials you used for Power BI.
+  1. Login in to the existing portal [https://manage.windowsazure.com/](https://manage.windowsazure.com/) using the same credentials you used for Power BI.
 
   2. Click the **active directory** tab.
   <img src="../images/active_directory_tab.jpg" class="block"/>
@@ -64,7 +64,7 @@
   13. In the dialog click on Power BI Service so that it appears in the list on the right and then click the checkmark.
   <img src="../images/power_bi_service_click.jpg" class="block"/>
 
-!!<h4>Power BI</h4>If Power BI Service does not show up on the list of applications, visit https://powerbi.microsoft.com/en-us/documentation/powerbi-admin-free-with-custom-azure-directory/ to learn how to correct this. You will need to log in to Power BI as an organizational user within your directory before the service shows up in AAD.
+!!<h4>Power BI</h4>If Power BI Service does not show up on the list of applications, visit [https://powerbi.microsoft.com/en-us/documentation/powerbi-admin-free-with-custom-azure-directory/](https://powerbi.microsoft.com/en-us/documentation/powerbi-admin-free-with-custom-azure-directory/) to learn how to correct this. You will need to log in to Power BI as an organizational user within your directory before the service shows up in AAD.
 
   14. In the Power BI Service row that appears, click on **Delegated permissions** and check **View all Dashboards**.
   <img src="../images/view_all_dashboards.jpg" class="block"/>

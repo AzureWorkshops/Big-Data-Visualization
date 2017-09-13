@@ -6,9 +6,9 @@
 
 ### **Task 1:** Register for trial account in WeatherUnderground.com
 
-1.	To retrieve the 10-day hourly weather forecast, you will use an API from WeatherUnderground.com. There is a free developer version that provides you access to the API you need for this workshop.
+1.	To retrieve the 10-day hourly weather forecast, you will use an API from [WeatherUnderground.com](https://www.wunderground.com/). There is a free developer version that provides you access to the API you need for this workshop.
 
-2.	Navigate to http://www.wunderground.com/weather/api/.
+2.	Navigate to [http://www.wunderground.com/weather/api/](http://www.wunderground.com/weather/api/).
 
 3.	Click **Explore My Options**.
 <img src="../images/explore_my_options.jpg" class="block"/>

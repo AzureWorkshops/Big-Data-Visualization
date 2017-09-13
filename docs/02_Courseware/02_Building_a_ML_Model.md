@@ -28,7 +28,7 @@
 
 1.	Before you begin creating a machine learning experiment, there are three datasets you need to load.
 
-2.	Download the three CSV sample datasets from here: http://bit.ly/1Hrm5es 
+2.	Download the three CSV sample datasets from here: [http://bit.ly/1Hrm5es](http://bit.ly/1Hrm5es)
 
 3.	Extract the ZIP and verify you have the following files:
     * FlightDelaysWithAirportCodes.csv

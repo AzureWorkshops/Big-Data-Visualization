@@ -20,7 +20,7 @@
 5.	Click **Connect**.
 <img src="../images/pbi_conect.jpg" class="block"/>
 
-    * If prompted, click on the button to start a free trial of Power BI Pro, which is required for connecting to SQL Data Warehouse.
+!!<h4>If prompted...</h4>click on the button to start a free trial of Power BI Pro, which is required for connecting to SQL Data Warehouse.
 
 6.	In the dialog box, enter the fully qualified name to the SQL Server hosting your SQL Data Warehouse, and then provide the name of the database.
 <img src="../images/pbi_adw_server.jpg" class="block"/>

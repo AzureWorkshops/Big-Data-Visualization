@@ -19,7 +19,6 @@
 5.	Click **Create**.
 
 6.	Navigate to your ML workspace by clicking **Machine Learning** Workspace in the Resource Group blade.
-<img src="../images/.jpg" class="block"/>
 
 7.	In the additional links, click **Launch Machine Learning Studio** to open your workspace using the development environment ML Studio.
 <img src="../images/launch_machine_learning_studio.jpg" class="block"/>

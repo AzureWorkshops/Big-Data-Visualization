@@ -61,5 +61,9 @@
 
 6.	On your deployed web app, change the date of the flight to tomorrow's date (or another future date no further than 10 days away). 
 
-7.	Click **Predict Delay**. You should see the weather icon display. If you hover over the icon, you will get the description of the weather conditions forecasted. At this point, Delay Prediction should display not configured. You will set Delay Prediction up shortly.
+7. Change the **From** airport to **ATL**, then click **Predict Delay**
+
+<img src="../images/predict_delay_change_from_airport.jpg" class="block"/>
+
+8. You should see the weather icon display on the right. If you hover over the icon, you will get the description of the weather conditions forecasted. At this point, Delay Prediction should display not configured. You will set Delay Prediction up shortly.
 <img src="../images/predict_delay.jpg" class="block"/>

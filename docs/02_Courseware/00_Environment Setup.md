@@ -29,75 +29,110 @@
 
 ### **Task 2:** Register Web App with Azure Active Directory 
 
-  1. Login in to the existing portal [https://manage.windowsazure.com/](https://manage.windowsazure.com/) using the same credentials you used for Power BI.
+  1. Login in to the existing portal [https://portal.azure.com/](https://portal.azure.com/) using the same credentials as above.
 
   2. Click the **active directory** tab.
+
   <img src="../images/active_directory_tab.jpg" class="block"/>
 
-  3. Click the name of your default directory in the grid.
+  3. Click the **App Registrations** tab.
 
-  4. Click the **Applications** tab.
-  <img src="../images/applications_tab.jpg" class="block"/>
+  <img src="../images/click_app_registration.jpg" class="block"/>
 
-  5. In the command bar at the bottom, click **Add**.
-  <img src="../images/command_bar_add.jpg" class="block"/>
+  5. At the top of the page, click **+ New application registration**.
 
-  6. In the dialog box, click **Add an application my organization is developing**.
-  <img src="../images/add_app_org_dev.jpg" class="block"/>
+  <img src="../images/new_app_registration.jpg" class="block"/>
 
-  7. In the next dialog box, enter a unique name for your application (e.g., “AdventureWorksTravelYourMSAlias”) and leave the Web Application radio button selected.
-  <img src="../images/web_app_radio_button.jpg" class="block"/>
+  6. On the Create App Registration blade enter a unique **Name** for your application (e.g., “AdventureWorksTravel_YourInitials”)
 
-  8. Click the right arrow button to move to the next screen.
+  7. Leave the default Application type as **Web app / API**
 
-  9. For both fields, provide the URL to your newly deployed web app (make sure the URLs start with https).
-  <img src="../images/provide_url.jpg" class="block"/>
+  8. Enter the **Sign-on URL**, which can be copied from the **Site URL** in Visual Studio in the Summary section for your published application.
 
-  10. Click the checkmark button.
+  <img src="../images/copy_site_URL.jpg" class="block"/>  
 
-  11. On the dashboard for your application, click the **Configure** tab.
-  <img src="../images/configure_tab.jpg" class="block"/>
+  10. Click the **Create** button.
 
-  12. Scroll down to the permissions to other applications section and click **Add application**
-  <img src="../images/add_application.jpg" class="block"/>
+  <img src="../images/create_app_registration.jpg" class="block"/>
 
-  13. In the dialog click on Power BI Service so that it appears in the list on the right and then click the checkmark.
-  <img src="../images/power_bi_service_click.jpg" class="block"/>
+  11. On the Registered app blade for your application, click on **Settings**.
+
+  <img src="../images/click_registered_app_settings.jpg" class="block"/>
+
+  12. Under API ACCESS, select **Required permissions**
+
+  <img src="../images/registered_app_settings.jpg" class="block"/>
+
+  13. On the Required Permissions blade, select **+ Add**
+
+  <img src="../images/click_add_required_permissions.jpg" class="block"/>
+
+  14. On the Add API Access blade, click **Select an API**
+
+  <img src="../images/add_api_access_select.jpg" class="block"/>
+
+  15. On the Select an API blade, select the **Power BI Service**, then click **Select**.
+
+  <img src="../images/select_api_search_power_bi.jpg" class="block"/>
+
+  16. On the Enable Access blade under **DELEGATED PERMISSIONS**, select the checkbox next to **View all Dashboards (preview)** then click **Select**.
+
+  <img src="../images/api_enable_access_PBI_view_all_dashboards.jpg" class="block"/>
+
+  17. On the Add API access blade, select **Done**.
+
+  <img src="../images/add_api_access_done.jpg" class="block"/>
+
+  18. Close the Required permisions blade.
 
 !!<h4>Power BI</h4>If Power BI Service does not show up on the list of applications, visit [powerbi.microsoft.com](https://powerbi.microsoft.com/en-us/documentation/powerbi-admin-free-with-custom-azure-directory/) to learn how to correct this. You will need to log in to Power BI as an organizational user within your directory before the service shows up in AAD.
 
-  14. In the Power BI Service row that appears, click on **Delegated permissions** and check **View all Dashboards**.
-  <img src="../images/view_all_dashboards.jpg" class="block"/>
+  14. In the Settings blade under API ACCESS, click on **Keys**.
 
-  15. Scroll up to the Keys section.
+  <img src="../images/app_reg_settings_select_keys.jpg" class="block"/>
 
-  16. Click the **Select duration** drop-down and select **1 year**. 
-  <img src="../images/duration.jpg" class="block"/>
+  15. In the Keys blade, under **DESCRIPTION** enter **pbi_access_key**.
 
-  17. Click **Save** in the command bar at the bottom.
+  16. Under **EXPIRES** , click the Duration drop-down and select **1 year**. Leave the field under **VALUE** blank, as the key will be generated when you click Save.
+
+  <img src="../images/pbi_access_key_click_save.jpg" class="block"/>
+
+  17. Click **Save** at the top of the Keys blade.
+
+  18. Close the **Keys** blade.
+
+  18. Close the **Settings** blade.
 
   18. Copy the key value that appears after the save completes.
-  <img src="../images/copy_key_value.jpg" class="block"/>
+  <img src="../images/pbi_access_key_copy_key.jpg" class="block"/>
 
-  19. Return to the sample app in Visual Studio, right-click the project in Solution Explorer and select **Properties**. 
+  19. Close the **Keys** blade
+
+  20. Close the **Settings** blade
+
+  19. Return to the AWTravelWebApp Solution in Visual Studio, right-click the project in Solution Explorer and select **Properties**. 
 
   20. Click the **Settings** tab. For the value of the ClientSecret setting, paste the key you just copied.
+
   <img src="../images/client_secret.jpg" class="block"/>
 
-  21. Return to the Configure page and copy the Client ID value.
-  <img src="../images/copy_client_id_value.jpg" class="block"/>
+  21. Return to the Azure portal. From the AdventureWorks_Travel_xxx Registered app page, copy the Application ID value.
 
-  22. In the sample Settings, paste the value of the ClientID in the ClientID setting.
-  <img src="../images/sample_settings_paste_clientid.jpg" class="block"/>
+  <img src="../images/copy_app_id_value.jpg" class="block"/>
+
+  22. Return to Visual Studio. In the AWTravelWebApp_xxx project Settings, paste the value of the Application ID in the ClientID setting.
+
+  <img src="../images/paste_app_client_id.jpg" class="block"/>
 
   23. Set the value of the RedirectURL to the URL of your newly deployed web app (including HTTPS), and append /Redirect to the end.
+
   <img src="../images/set_redirect_url_value.jpg" class="block"/>
 
   24. Save the project.
 
 ### **Task 3:** Update sample app with Storage Account credentials
 
-  1. Using the New Portal, navigate to the blade for your Storage Account.
+  1. Using the Azure Portal, navigate to the blade for your Storage Account.
 
   2. Click **Access Keys**.
   <img src="../images/click_access_keys.jpg" class="block"/>

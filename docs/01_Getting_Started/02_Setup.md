@@ -17,39 +17,81 @@ Synopsis: Before attending the workshop, you should follow these steps to prepar
 
 3. Follow the on-screen prompts and your Power BI environment should be ready within minutes. You can always return to it via [https://app.powerbi.com](https://app.powerbi.com).
 
-### **Task 2:** Provision Azure SQL Data Warehouse
+### **Task 2:** Provision Azure Resource Group
+
+Using the Azure Portal, provision a new Resource Group which will contain all of the resources created during the workshop.
+
+1. Click **+ Create a resource**, type **resource group** in the search box, then press **Enter**.
+
+<img src="../images/search_resource_group.jpg" class="block"/>
+
+2. Select **Resource group** from the search results, then click **Create** at bottom of Resource group blade.
+
+<img src="../images/click_create_resource_group.jpg" class="block"/>
+
+3. Enter a **Resource group name**, select your **Subscription** from the dropdown, then choose the appropriate **Resource group location**, such as **East US**. Click **Create** at bottom of Resource group blade.
+
+<img src="../images/click_create_named_resource_group.jpg" class="block"/>
+
+
+### **Task 3:** Provision Azure SQL Data Warehouse
 
 Using the Azure Portal, provision a new instance of SQL Data Warehouse.
 
-1. Click **+New**, select **Data + Storage**, **SQL Data Warehouse**.
+1. Click **+Create a resource**, select **Databases**, **SQL Data Warehouse**.
+
 <img src="../images/provision_adw.jpg" class="block"/>
 
 2. Provide a Name for the SQL Data Warehouse.
+
 <img src="../images/adw_name.jpg" class="block"/>
 
-3. Set the **Performance** to **100 DWU**. (You will not need any more for this workshop.)
-<img src="../images/adw100dwu.jpg" class="block"/>
+3. Select **Use existing** for **Resource group**, then select the resource group you created in Task 2.
 
-4. Select Server.
+<img src="../images/adw_select_resource_group.jpg" class="block"/>
+
+4. Under **Select source** use the default **Blank database** option
+
+<img src="../images/adw_select_source_blank_database.jpg" class="block"/>
+
+5. Select **Configure required settings** under Server.
+
 <img src="../images/adw_select_server.jpg" class="block"/>
 
-5. Create a new server or use an existing server as desired.
+6. Click **Create a new server**.
 
-6. Select **Create**.
-<img src="../images/create_adw.jpg" class="block"/>
+<img src="../images/adw_create_new_server.jpg" class="block"/>
 
-<img src="../images/create_adw2.jpg" class="block"/>
+7. On the New server blade, enter a **Server name**, enter a **Server admin login**, enter a **Password**, and keep default location. Ensure the checkbox, **Allow azure services to access server** is checked then press **Select**.
 
-### **Task 3:** Provision a Storage Account
+<img src="../images/adw_select_new_server.jpg" class="block"/>
+
+8. Click **Performance tier** to open the **Configure Performance** blade.
+
+<img src="../images/adw_select_performance_tier.jpg" class="block"/>
+
+9. On the **Configure Performance** blade, on the **Optimized for Elasticity** tab, slide the slider under **Scale your system** to the left until the box reads **DW100**, then click **Apply**. (This is all the scale you will need for this workshop.)
+
+<img src="../images/adw_configure_performance_DW100.jpg" class="block"/>
+
+10. Back on the SQL Data Warehouse blade, click **Create**
+
+<img src="../images/adw_click_create.jpg" class="block"/>
+
+### **Task 4:** Provision a Storage Account
 Using the Azure Portal, provision a new Azure Storage Account to use for this workshop.
-1.	Click **+New**, select **Data + Storage**, **Storage Account**. 
+1.	Click **+Create a resource**, select **Storage**, **Storage Account- blob, file, table, queue**. 
+
 <img src="../images/storeage_account.jpg" class="block"/>
 
 2. Provide a Name for the storage account.
 
-3. For the resource group, add it to the Resource Group you are using for this workshop.
+3. Leave default settings for Deployment model, Account kind, Performance, Replication, Secure transfer required, and Subscription.
 
-4. For the location, choose the same Location as your SQL Data Warehouse. 
+3. For the **Resource group**, select the resource group you created in Task 2.
+
+4. For the **Location**, choose the same Location as your SQL Data Warehouse.
+
 <img src="../images/create_storage_account.jpg" class="block"/>
 
 5. Select **Create**.

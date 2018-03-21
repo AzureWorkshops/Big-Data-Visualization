@@ -1,4 +1,4 @@
-# Big-Data-Visualization-New
+# Big-Data-Visualization
 Replacement Big Data and Visualization Workshop based on updated content and services
 
 In this workshop, you will complete a web app using Machine Learning to predict travel delays given flight delay data and weather conditions, plan the bulk data import operation, followed by preparation tasks, such as cleaning and manipulating the data for testing, and training your Machine Learning model.

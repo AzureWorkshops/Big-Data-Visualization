@@ -6,11 +6,13 @@
 
 ### **Task 1:** Navigate to Machine Learning Studio
 
-  1.  In a browser, go to the Azure portal (https://portal.azure.com), and navigate to your Machine Learning Studio workspace under the Resource Group you created when completing the prerequisites for this hands-on lab. 
-    <img src="../images/nav_to_ml_studio.jpg" class="block"/>
+  1.  In a browser, go to the Azure portal (https://portal.azure.com), and navigate to your Machine Learning Studio workspace under the Resource Group you created when completing the prerequisites for this hands-on lab.
+
+<img src="../images/nav_to_ml_studio.jpg" class="block"/>
 
   2. On the Machine Learning Studio workspace blade, select **Launch Machine Learning Studio**.
-    <img src="../images/launch_ml_studio.jpg" class="block"/>
+
+<img src="../images/launch_ml_studio.jpg" class="block"/>
 
   3. Sign in, if prompted.
 

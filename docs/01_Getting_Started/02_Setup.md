@@ -1,97 +1,187 @@
-## Azure Subscription
-As stated in the requirements section, the workshop requires an active Azure subscription.
-
-!!<h4>Recommendation</h4>It is recommended that you do not use an Azure subscription that is currently being used for production.  The CLI will create it's own resource groups, but it is not the best practice to utilize production environments for testing and workshops, such as this.
-
-For best results, it is recommended that you setup register for the trial subscription as outlined on the [previous](./01_Azure_Registration.md) page.
-
 ## **Exercise 0:** Before the workshop
-Duration: 60 mins
-Synopsis: Before attending the workshop, you should follow these steps to prepare your environment for an efficient day.
 
-### **Task 1:** Provision Power BI
-1. If you do not already have a Power BI account, go to [https://www.powerbi.com](https://www.powerbi.com).
+**Duration:** 45 mins
 
-2. On the page, enter your work email address (it should be the same account as the one you use for your Azure subscription) and select **Use it free**.
-<img src="../images/powerbi_signup.jpg" class="block"/>
+**Synopsis:** In this exercise, you will set up your environment for use in the rest of the hands-on lab. 
 
-3. Follow the on-screen prompts and your Power BI environment should be ready within minutes. You can always return to it via [https://app.powerbi.com](https://app.powerbi.com).
+_**You should follow all the steps provided in this section to prepare your environment before attending the hands-on lab.**_
 
-### **Task 2:** Provision Azure Resource Group
+### **Task 1:** Deploy HDInsight cluster, Azure ML, and Storage Accounts to Azure
 
-Using the Azure Portal, provision a new Resource Group which will contain all of the resources created during the workshop.
+1. Click the **Deploy to Azure** link below, and you will be taken to the Azure portal, and presented with a form for a new custom deployment (which uses an Azure Resource Management (ARM) template from a GitHub repository). You will be presented with a blade to provide some custom parameters as show in the screenshot below.
 
-1. Click **+ Create a resource**, type **resource group** in the search box, then press **Enter**.
+    [Deploy to Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FZoinerTejada%2Fmcw-big-data-and-visualization%2Fmaster%2FTemplates%2FTemplate-BigDataLab.json)
 
-<img src="../images/search_resource_group.jpg" class="block"/>
+2.	In the Custom deployment blade that appears, enter the following values:
 
-2. Select **Resource group** from the search results, then click **Create** at bottom of Resource group blade.
+    * Subscription: Select your subscription
 
-<img src="../images/click_create_resource_group.jpg" class="block"/>
+    * Resource group: Use and existing Resource group, or create a new one by entering a unique name, such as “bigdatalab-[your intials or first name]”.
 
-3. Enter a **Resource group name**, select your **Subscription** from the dropdown, then choose the appropriate **Resource group location**, such as **East US**. Click **Create** at bottom of Resource group blade.
+    * Location: Select a location for the Resource group. Recommend using East US, East US 2, West Central US, or West US 2, as some resources, such as Data Factory, are only available in those regions.
 
-<img src="../images/click_create_named_resource_group.jpg" class="block"/>
+    * App name: Enter a unique name, such as your initials or first name. This value must be between 3 and 10 characters long, and should not contain any special characters. Note the name, as you will need to use it in your Lab VM deployment in Task 3 as well.
+
+    * Cluster Login User Name: Enter a name, or accept the default. Note all references to this in the lab use the default user name, demouser, so if you change it, please note it for future reference throughout the lab.
+
+    * Cluster Login Password: Enter a password, or accept the default. Note all references to this in the lab use the default password, **Password.1!!**, so if you change it, please note it for future reference throughout the lab.
+
+    * Check the box to agree to the terms.
+
+    * Select Purchase.
+
+    <img src="../images/select_purchase_custom_deployment.jpg" class="block"/>
+
+3.	The deployment will take about 15 minutes to complete. 
+4.	Wait for the deployment to complete before attempting to deploy the Lab Virtual Machine in Task 3, as it depends on the Virtual Network created by this deployment. In the meantime, you can move on to the next task, Task 2, while this deployment is ongoing.
 
 
-### **Task 3:** Provision Azure SQL Data Warehouse
+### **Task 2:** Register for a trial API account at WeatherUnderground.com
 
-Using the Azure Portal, provision a new instance of SQL Data Warehouse.
+To retrieve the 10-day hourly weather forecast, you will use an API from WeatherUnderground.com. There is a free developer version that provides you access to the API you need for this hands-on lab.
 
-1. Click **+Create a resource**, select **Databases**, **SQL Data Warehouse**.
+1.	Navigate to http://www.wunderground.com/weather/api/.
 
-<img src="../images/provision_adw.jpg" class="block"/>
+2.	Select Explore My Options.
 
-2. Provide a Name for the SQL Data Warehouse.
+    <img src="../images/wu_explore_options.jpg" class="block"/>
 
-<img src="../images/adw_name.jpg" class="block"/>
+3.	On the Get Your API Key page, select **Anvil Plan**. 
 
-3. Select **Use existing** for **Resource group**, then select the resource group you created in Task 2.
+    <img src="../images/wu_select_anvil_plan.jpg" class="block"/>
 
-<img src="../images/adw_select_resource_group.jpg" class="block"/>
+4.	Scroll down until you see the area titled How much will you use our service? Ensure **Developer** is selected.
 
-4. Under **Select source** use the default **Blank database** option
+    <img src="../images/wu_select_developer.jpg" class="block"/>
 
-<img src="../images/adw_select_source_blank_database.jpg" class="block"/>
+5.	Select **Purchase Key**.
 
-5. Select **Configure required settings** under Server.
+    <img src="../images/wu_purchase_key.jpg" class="block"/>
 
-<img src="../images/adw_select_server.jpg" class="block"/>
+6.	Complete the Create an Account form by providing your email address and a password, and agreeing to the terms. 
 
-6. Click **Create a new server**.
+7.	Select Sign up for free.
 
-<img src="../images/adw_create_new_server.jpg" class="block"/>
+    <img src="../images/wu_sign_up_free.jpg" class="block"/>
 
-7. On the New server blade, enter a **Server name**, enter a **Server admin login**, enter a **Password**, and keep default location. Ensure the checkbox, **Allow azure services to access server** is checked then press **Select**.
+8.	In a few moments you should receive a confirmation email at the email address you provided. Select the **Validate Your Email** link found within the email.
 
-<img src="../images/adw_select_new_server.jpg" class="block"/>
+    <img src="../images/wu_validate_email.jpg" class="block"/>
 
-8. Click **Performance tier** to open the **Configure Performance** blade.
+9.	Once you have validated your email, go back to the Get Your API Key page, re-select Anvil and select Purchase Key.
 
-<img src="../images/adw_select_performance_tier.jpg" class="block"/>
+10.	Complete the brief contact form. When answering where will the API be used, select **Website**. For Will the API be used for commercial use, select **No**. Select **Purchase Key**.
 
-9. On the **Configure Performance** blade, on the **Optimized for Elasticity** tab, slide the slider under **Scale your system** to the left until the box reads **DW100**, then click **Apply**. (This is all the scale you will need for this workshop.)
+    <img src="../images/wu_select_purchase_key.jpg" class="block"/>
 
-<img src="../images/adw_configure_performance_DW100.jpg" class="block"/>
+11. You should be taken to a page that displays your key, similar to the following:
 
-10. Back on the SQL Data Warehouse blade, click **Create**
+    <img src="../images/wu_display_key.jpg" class="block"/>
 
-<img src="../images/adw_click_create.jpg" class="block"/>
+12.	Take note of your API Key. It is available from the text box labeled **Key ID**.
 
-### **Task 4:** Provision a Storage Account
-Using the Azure Portal, provision a new Azure Storage Account to use for this workshop.
-1.	Click **+Create a resource**, select **Storage**, **Storage Account- blob, file, table, queue**. 
+13.	To verify that your API Key is working, **modify the following URL** to include your API Key: **http://api.wunderground.com/api/<YOURAPIKEY>/hourly10day/q/SEATAC.json**.
 
-<img src="../images/storeage_account.jpg" class="block"/>
+14.	Open your modified link in a browser, you should get a JSON result showing the 10-day, hourly weather forecast for the Seattle-Tacoma International Airport
 
-2. Provide a Name for the storage account.
+    <img src="../images/wu_test_api_key.jpg" class="block"/>
 
-3. Leave default settings for Deployment model, Account kind, Performance, Replication, Secure transfer required, and Subscription.
+### **Task 3:** Deploy Lab Virtual Machine (Lab VM) to Azure
 
-3. For the **Resource group**, select the resource group you created in Task 2.
+1. Click the **Deploy to Azure** link below, and you will be taken to the Azure portal, and presented with a form for a new custom deployment (which uses an ARM template from a GitHub repository). You will be presented with a blade to provide some custom parameters as show in the screenshot below. 
 
-4. For the **Location**, choose the same Location as your SQL Data Warehouse.
+    [Deploy to Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FZoinerTejada%2Fmcw-big-data-and-visualization%2Fmaster%2FTemplates%2FTemplate-BigDataLabVM.json)
 
-<img src="../images/create_storage_account.jpg" class="block"/>
+2.	In the Custom deployment blade that appears, enter the following values:
+    *	Subscription: Select your subscription
 
-5. Select **Create**.
+    *	Resource group: Choose **Use Existing**, and select the same resource group you used when deploying your HDInsight cluster and Azure ML workspace, above.
+
+    *	Location: The location should be automatically selected to be the same as your Resource Group.
+
+    *	App name: **IMPORTANT:** You must enter the **same App name** you used in the deployment above in Task 1.
+
+    *	VM User Name: Enter a name, or accept the default. Note all references to this in the lab use the default user name, **demouser**, so if you change it, please note it for future reference throughout the lab.
+
+    *	VM Password: Enter a password, or accept the default. Note all references to this in the lab use the default password, **Password.1!!**, so if you change it, please not it for future reference throughout the lab.
+
+    *	Check the box to agree to the terms.
+
+    *	Select **Purchase**. 
+
+    <img src="../images/select_purchase_custom_deployment_vm.jpg" class="block"/>
+
+3.	The deployment will take about 10 minutes to complete.
+
+
+### **Task 4:** Install Power BI Desktop on the Lab VM
+
+1.	Connect to the Lab VM. (If you are already connected to your Lab VM, skip to Step 7.
+
+2.	From the left side menu in the Azure portal, click on **Resource groups**, then enter your resource group name into the filter box, and select it from the list. 
+
+    <img src="../images/install_pbi_select_resource_group.jpg" class="block"/>
+
+3.	Next, select your lab virtual machine from the list.
+
+    <img src="../images/install_pbi_select_lab_vm.jpg" class="block"/>
+
+4. On your Lab VM blade, select Connect from the top menu.
+
+    <img src="../images/install_pbi_connect_vm.jpg" class="block"/>
+
+5.	Download and open the RDP file.
+
+6.	Select **Connect**, and enter the following credentials (or the non-default credentials if you changed them):
+
+*   User name: demouser
+*	Password: Password.1!!
+
+7.	In a web browser on the Lab VM navigate to the Power BI Desktop download page (https://powerbi.microsoft.com/en-us/desktop/). 
+
+8.	Select the **Download Free** link in the middle of the page
+
+    <img src="../images/install_pbi_download_free.jpg" class="block"/>
+
+9.	Run the installer.
+10.	Select Next on the welcome screen. 
+
+    <img src="../images/install_pbi_welcome_screen.jpg" class="block"/>
+
+11.	Accept the license agreement, and select **Next**. 
+
+    <img src="../images/install_pbi_accept_license.jpg" class="block"/>
+
+12.	Leave the default destination folder, and select **Next**. 
+
+    <img src="../images/install_pbi_destination_folder.jpg" class="block"/>
+
+13.	Make sure the **Create a desktop shortcut** box is checked, and select **Install**. 
+
+    <img src="../images/install_pbi_select_install.jpg" class="block"/>
+
+14.	**Uncheck** Launch Microsoft Power BI Desktop, and select **Finish**. 
+
+    <img src="../images/install_pbi_finish.jpg" class="block"/>
+
+
+### **Task 5:** Install an SSH client
+
+In this task, you will download, and install the Git Bash SSH client. This will be used to interact with the HDInsight cluster.
+
+1.	On your Lab VM, open a browser, and navigate to https://git-scm.com/downloads to download Git Bash. 
+
+    <img src="../images/download_git_bash.jpg" class="block"/>
+
+2.	Select the **Download 2.xx.x for Windows** button.
+
+3.	Run the downloaded installer, selecting **Next** on each screen to accept the defaults.
+
+4.	On the last screen, select **Install** to complete the installation.
+
+    <img src="../images/install_git_bash.jpg" class="block"/>
+
+5.	When the install is complete, **uncheck View Release Notes**, and select **Finish**.
+
+    <img src="../images/install_git_bash_finish.jpg" class="block"/>
+

@@ -77,38 +77,38 @@
 
 <img src="../images/adf_copy_sink_add_header.jpg" class="block"/>
 
-13.	On the Settings screen, select **Skip all incompatible rows** under Actions, then select **Next**. 
+14.	On the Settings screen, select **Skip all incompatible rows** under Actions, then select **Next**. 
 
 <img src="../images/adf_copy_sink_configure_settings.jpg" class="block"/>
 
-14.	Review settings on the Summary tab. 
+15.	Review settings on the Summary tab. 
 
 <img src="../images/adf_copy_sink_review_settings_summary.jpg" class="block"/>
 
-15.	Scroll down on the summary page until you see the **Copy Settings** section. Select **Edit** next to Copy Settings. 
+16.	Scroll down on the summary page until you see the **Copy Settings** section. Select **Edit** next to Copy Settings. 
 
 <img src="../images/adf_copy_settings.jpg" class="block"/>
 
-16.	Change the following Copy settings
+17.	Change the following Copy settings
     *	Concurrency: Set to **10**
     *	Execution priority order: Change to **OldestFirst**
     *	Select **Save** 
 
 <img src="../images/adf_copy_edit_copy_settings.jpg" class="block"/>
 
-17.	After saving the Copy settings, select **Next** on the Summary tab.
+18.	After saving the Copy settings, select **Next** on the Summary tab.
 
-18.	On the Deployment screen you will see a message that the deployment in is progress, and after a minute or two that the deployment completed. 
+19.	On the Deployment screen you will see a message that the deployment in is progress, and after a minute or two that the deployment completed. 
 
 <img src="../images/adf_copy_deployment_complete.jpg" class="block"/>
 
-19.	Select the **Click here to monitor copy pipeline** link at the bottom of the **Deployment** screen.
+20.	Select the **Click here to monitor copy pipeline** link at the bottom of the **Deployment** screen.
 
-20.	From the Data Factory Resource Explorer, you should see the pipeline activity status **Ready**. This indicates the CSV files are successfully copied from your VM to your Azure Blob Storage location. 
+21.	From the Data Factory Resource Explorer, you should see the pipeline activity status **Ready**. This indicates the CSV files are successfully copied from your VM to your Azure Blob Storage location. 
 
 <img src="../images/adf_copy_pipeline_activity_ready.jpg" class="block"/>
 
-4.	You may need to adjust the Start time in the window, as follows, and then select **Apply**. 
+22.	You may need to adjust the Start time in the window, as follows, and then select **Apply**. 
 
 <img src="../images/adf_copy_adjust_start_time.jpg" class="block"/>
 
